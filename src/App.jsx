@@ -1,9 +1,15 @@
-import "./App.css";
+import * as React from "react";
+import Mapbox from "./MapBox";
+import IpLookup from "./IpLookup";
+import { useState } from "react";
 
 function App() {
+  const [IpData, setIpData] = useState({});
+
   return (
     <>
-      <h1 className="text-3xl text-center font-bold underline">Hello world!</h1>
+      <IpLookup IpData={IpData} setIpData={setIpData} />
+      <Mapbox IpData={IpData} />
     </>
   );
 }
