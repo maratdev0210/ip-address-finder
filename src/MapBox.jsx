@@ -9,10 +9,10 @@ export default function Mapbox({ IpData }) {
           initialViewState={{
             longitude: IpData.data.longitude,
             latitude: IpData.data.latitude,
-            zoom: 10,
+            zoom: 14,
           }}
           style={{ width: 600, height: 400 }}
-          mapStyle="https://demotiles.maplibre.org/style.json"
+          mapStyle="https://api.maptiler.com/maps/streets/style.json?key=pNMgOAwqcLUmiSVH6Mp6"
         >
           <GeolocateControl />
         </Map>
