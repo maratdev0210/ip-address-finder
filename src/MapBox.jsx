@@ -1,4 +1,4 @@
-import { Map } from "@vis.gl/react-maplibre";
+import { Map, GeolocateControl } from "@vis.gl/react-maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
 
 export default function Mapbox({ IpData }) {
@@ -13,7 +13,9 @@ export default function Mapbox({ IpData }) {
           }}
           style={{ width: 600, height: 400 }}
           mapStyle="https://demotiles.maplibre.org/style.json"
-        />
+        >
+          <GeolocateControl />
+        </Map>
       ) : null}
     </>
   );
