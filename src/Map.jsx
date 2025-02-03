@@ -1,6 +1,7 @@
 import * as maptilersdk from "@maptiler/sdk";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
 import React, { useRef, useEffect } from "react";
+import { useState } from "react";
 import "./map.css";
 
 export default function MapComponent({ longitude, latitude }) {
@@ -8,19 +9,21 @@ export default function MapComponent({ longitude, latitude }) {
   const map = useRef(null);
   const location = { lng: longitude, lat: latitude };
   let locationActual = { lng: 0, lat: 0 };
+
   const zoom = 14;
   maptilersdk.config.apiKey = "pNMgOAwqcLUmiSVH6Mp6";
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      locationActual.lat = position.coords.latitude;
-      locationActual.lng = position.coords.longitude;
 
-      if (map.current) return;
+  useEffect(() => {
+    if (map.current) return;
+
+    navigator.geolocation.getCurrentPosition((position) => {
+      locationActual.lng = position.coords.longitude;
+      locationActual.lat = position.coords.latitude;
 
       map.current = new maptilersdk.Map({
         container: mapContainer.current,
         style: maptilersdk.MapStyle.STREETS,
-        center: [locationActual.lng, locationActual.lat],
+        center: [location.lng, location.lat],
         zoom: zoom,
       });
 
