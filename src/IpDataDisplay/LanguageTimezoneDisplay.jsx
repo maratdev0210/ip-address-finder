@@ -1,4 +1,4 @@
-export default function LanguageTimezone({ IpData }) {
+export default function LanguageTimezoneDisplay({ IpData }) {
   return (
     <div className="language-timezone flex px-3">
       <div className="language w-1/2 flex flex-col">

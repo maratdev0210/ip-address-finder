@@ -1,10 +1,10 @@
-import CityData from "./CityData";
-import LanguageTimezone from "./LanguageTimezone";
-import IpLocation from "./IpLocation";
-import Geoposition from "./Geopostion";
-import IpDisplay from "./IpDisplay";
+import CityInfo from "./CityInfo";
+import LanguageTimezoneDisplay from "./LanguageTimezoneDisplay";
+import IpLocationCoordinates from "./IpLocationCoordinates";
+import CoordinatesDisplay from "./CoordinatesDisplay";
+import IpValueDisplay from "./IpValueDisplay";
 
-export default function DataDisplay({ IpData }) {
+export default function IpDataDisplay({ IpData }) {
   const dataKeys = [
     "ip",
     "latitude",
@@ -23,11 +23,11 @@ export default function DataDisplay({ IpData }) {
   }
 
   const components = [
-    <IpDisplay dataValues={dataValues} />,
-    <Geoposition dataValues={dataValues} />,
-    <IpLocation dataValues={dataValues} />,
-    <CityData dataValues={dataValues} />,
-    <LanguageTimezone IpData={IpData} />,
+    <IpValueDisplay dataValues={dataValues} />,
+    <CoordinatesDisplay dataValues={dataValues} />,
+    <IpLocationCoordinates dataValues={dataValues} />,
+    <CityInfo dataValues={dataValues} />,
+    <LanguageTimezoneDisplay IpData={IpData} />,
   ];
 
   const componentTree = components.map((component) => component);

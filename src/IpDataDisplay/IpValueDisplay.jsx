@@ -1,4 +1,4 @@
-export default function IpDisplay({ dataValues }) {
+export default function IpValueDisplay({ dataValues }) {
   return (
     <div className="ip-row flex justify-center">
       <span className="text-center font-bold text-2xl py-3 italic">

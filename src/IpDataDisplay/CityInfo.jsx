@@ -1,5 +1,5 @@
-export default function CityData({ dataValues }) {
-  const cityData = [
+export default function CityInfo({ dataValues }) {
+  const cityInfo = [
     {
       name: "City, State",
       value: dataValues[6],
@@ -10,16 +10,16 @@ export default function CityData({ dataValues }) {
     },
   ];
 
-  const components = cityData.map((data) => (
-    <div className="w-1/2 flex flex-col">
+  const cityInfoSection = cityInfo.map((data) => (
+    <div className="w-1/2 flex flex-col cityInfo-section">
       <span className="text-2xl font-bold text-blue-900">{data.name}</span>
       <span className="text-xl">{data.value}</span>
     </div>
   ));
 
   return (
-    <div className="city-data flex px-3 py-3 border-b-2 border-blue-900/50">
-      {components}
+    <div className="city-info flex px-3 py-3 border-b-2 border-blue-900/50">
+      {cityInfoSection}
     </div>
   );
 }

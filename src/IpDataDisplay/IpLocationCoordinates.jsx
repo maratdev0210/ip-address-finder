@@ -1,4 +1,5 @@
-export default function IpLocation({ dataValues }) {
+// display the coordinates of a given IP
+export default function IpLocationCoordinates({ dataValues }) {
   return (
     <div className=" py-3 bg-black/10 ip-location flex justify-center">
       <img src={dataValues[3]} alt="country" />

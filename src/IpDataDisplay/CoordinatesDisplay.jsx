@@ -1,4 +1,4 @@
-export default function Geoposition({ dataValues }) {
+export default function CoordinatesDisplay({ dataValues }) {
   const geopositionData = [
     {
       name: "Latitude",
@@ -10,12 +10,12 @@ export default function Geoposition({ dataValues }) {
     },
   ];
 
-  const components = geopositionData.map((data) => (
-    <div className="w-1/2 px-3 flex flex-col">
+  const coordinatesSection = geopositionData.map((data) => (
+    <div className="w-1/2 px-3 flex flex-col coordinates-section">
       <span className="font-bold text-blue-900 text-2xl">{data.name}</span>
       <span className="py-2">{data.value}</span>
     </div>
   ));
 
-  return <div className="geoposition flex">{components}</div>;
+  return <div className="geoposition flex">{coordinatesSection}</div>;
 }
