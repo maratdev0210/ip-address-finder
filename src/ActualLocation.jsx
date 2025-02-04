@@ -3,6 +3,7 @@ import "@maptiler/sdk/dist/maptiler-sdk.css";
 import React, { useRef, useEffect } from "react";
 import "./map.css";
 
+// unlike the IP location, the actual locaion is based on user's geoposition
 export default function ActualLocaiton() {
   const mapContainer = useRef(null);
   const map = useRef(null);

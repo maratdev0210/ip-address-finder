@@ -2,19 +2,19 @@ import * as React from "react";
 import IpLookup from "./IpLookup";
 import IpDataDisplay from "./IpDataDisplay/IpDataDisplay";
 import { useState } from "react";
-import MapComponent from "./Map";
+import Map from "./Map";
 
 function App() {
-  const [IpData, setIpData] = useState({});
+  const [ipData, setIpData] = useState({});
 
   return (
     <>
-      <IpLookup IpData={IpData} setIpData={setIpData} />
-      <IpDataDisplay IpData={IpData} />
-      {"data" in IpData ? (
-        <MapComponent
-          longitude={IpData.data.longitude}
-          latitude={IpData.data.latitude}
+      <IpLookup ipData={ipData} setIpData={setIpData} />
+      <IpDataDisplay ipData={ipData} />
+      {"data" in ipData ? (
+        <Map
+          ipLongitude={ipData.data.longitude}
+          ipLatitude={ipData.data.latitude}
         />
       ) : null}
     </>
