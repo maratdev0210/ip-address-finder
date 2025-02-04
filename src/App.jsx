@@ -3,12 +3,14 @@ import IpLookup from "./IpLookup";
 import IpDataDisplay from "./IpDataDisplay/IpDataDisplay";
 import { useState } from "react";
 import Map from "./Map";
+import Header from "./Header/header";
 
 function App() {
   const [ipData, setIpData] = useState({});
 
   return (
     <>
+      <Header />
       <IpLookup ipData={ipData} setIpData={setIpData} />
       <IpDataDisplay ipData={ipData} />
       {"data" in ipData ? (

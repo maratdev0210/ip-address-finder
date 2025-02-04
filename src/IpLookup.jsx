@@ -11,7 +11,9 @@ export default function IpLookup({ ipData, setIpData }) {
 
   return (
     <>
-      <button onClick={getIpData}>Get Ip Data</button>
+      <section id="findIp">
+        <button onClick={getIpData}>Get Ip Data</button>
+      </section>
     </>
   );
 }
