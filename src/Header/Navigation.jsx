@@ -5,7 +5,7 @@ export default function Navigation({ navigationLinks, isOpen, setIsOpen }) {
     return (
       <li>
         <a
-          className="text-black dark:text-white text-2xl xl:text-3xl hover:text-white/50 hover:underline"
+          className="text-black dark:text-white text-2xl  xl:text-3xl hover:text-white/50 hover:underline"
           href={link}
           onClick={() => setIsOpen(!isOpen)}
         >

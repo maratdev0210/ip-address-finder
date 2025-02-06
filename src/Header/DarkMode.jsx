@@ -11,7 +11,7 @@ export default function DarkMode({
       {!isOpen ? (
         <div className="color-mode flex items-center px-3">
           <span
-            className="text-white text-md font-serif sm:text-2xl xl:text-3xl"
+            className="text-white text-md font-serif sm:text-xl xl:text-3xl"
             onClick={() => setToggleMode(1 - toggleMode)}
           >
             Enable {colorModes[toggleMode]} Mode
