@@ -1,9 +1,10 @@
-import * as React from "react";
+import React from "react";
+import { useState } from "react";
 import IpLookup from "./IpLookup";
 import IpDataDisplay from "./IpDataDisplay/IpDataDisplay";
-import { useState } from "react";
 import Map from "./Map";
 import Header from "./Header/header";
+import AboutIP from "./AboutIP/AboutIP";
 
 function App() {
   const [ipData, setIpData] = useState({});
@@ -19,6 +20,7 @@ function App() {
           ipLatitude={ipData.data.latitude}
         />
       ) : null}
+      <AboutIP />
     </>
   );
 }
