@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 
 // a text being put on top of page's header that acts as a switch between dark/light theme of a webpage
 export default function SwitchColorMode({
@@ -7,11 +6,12 @@ export default function SwitchColorMode({
   isOpen,
   toggleMode,
   setToggleMode,
+  setTheme,
 }) {
-  // change color mode every time the user clicks on a text
-  useEffect(() => {
-    localStorage.setItem("themeMode", toggleMode == 0 ? "dark" : "light");
-  });
+  function onToggleMode() {
+    setToggleMode(1 - toggleMode);
+    setTheme(colorModes[toggleMode]); // light | dark theme; if toggleMode is 0 then light, else dark
+  }
 
   return (
     <React.Fragment>
@@ -19,7 +19,7 @@ export default function SwitchColorMode({
         <div className="color-mode flex items-center px-3">
           <span
             className="text-white text-md font-serif sm:text-xl xl:text-3xl"
-            onClick={() => setToggleMode(1 - toggleMode)}
+            onClick={onToggleMode}
           >
             Enable {colorModes[toggleMode]} Mode
           </span>
