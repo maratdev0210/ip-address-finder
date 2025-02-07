@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+
 import IpLookup from "./IpLookup";
 import IpDataDisplay from "./IpDataDisplay/IpDataDisplay";
 import Map from "./Map";
@@ -13,14 +14,14 @@ function App() {
   return (
     <>
       <Header theme={theme} setTheme={setTheme} />
-      <IpLookup ipData={ipData} setIpData={setIpData} />
+      <IpLookup theme={theme} setIpData={setIpData} />
       <IpDataDisplay ipData={ipData} />
-      {"data" in ipData ? (
+      {"data" in ipData && (
         <Map
           ipLongitude={ipData.data.longitude}
           ipLatitude={ipData.data.latitude}
         />
-      ) : null}
+      )}
       <AboutIP theme={theme} />
     </>
   );
