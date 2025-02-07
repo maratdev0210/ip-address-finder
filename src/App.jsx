@@ -15,7 +15,7 @@ function App() {
     <>
       <Header theme={theme} setTheme={setTheme} />
       <IpLookup theme={theme} setIpData={setIpData} />
-      <IpDataDisplay ipData={ipData} />
+      <IpDataDisplay theme={theme} ipData={ipData} />
       {"data" in ipData && (
         <Map
           ipLongitude={ipData.data.longitude}
