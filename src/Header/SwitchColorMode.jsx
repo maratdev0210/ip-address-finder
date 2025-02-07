@@ -8,6 +8,7 @@ export default function SwitchColorMode({
   toggleMode,
   setToggleMode,
 }) {
+  // change color mode every time the user clicks on a text
   useEffect(() => {
     localStorage.setItem("themeMode", toggleMode == 0 ? "dark" : "light");
   });
