@@ -8,10 +8,11 @@ import AboutIP from "./AboutIP/AboutIP";
 
 function App() {
   const [ipData, setIpData] = useState({});
+  const [theme, setTheme] = useState("light"); // light | dark theme
 
   return (
     <>
-      <Header />
+      <Header theme={theme} setTheme={setTheme} />
       <IpLookup ipData={ipData} setIpData={setIpData} />
       <IpDataDisplay ipData={ipData} />
       {"data" in ipData ? (
@@ -20,7 +21,7 @@ function App() {
           ipLatitude={ipData.data.latitude}
         />
       ) : null}
-      <AboutIP />
+      <AboutIP theme={theme} />
     </>
   );
 }
