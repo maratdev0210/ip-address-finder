@@ -6,7 +6,7 @@ export default function AboutIP({ theme }) {
   return (
     <section
       id="aboutIp"
-      className={`${theme} dark:bg-black/90 my-5 py-5 bg-black/5 font-serif md:w-3/4 lg:w-2/3 xl:w-1/2 2xl:w-1/3 mx-auto`}
+      className={`${theme} hover:cursor-pointer dark:bg-black/90 my-5 py-5 bg-black/5 font-serif md:w-3/4 lg:w-2/3 xl:w-1/2 2xl:w-1/3 mx-auto`}
     >
       <p className="dark:text-white text-center text-black text-2xl py-2 sm:text-4xl md:text-4xl md:py-4 xl:text-6xl xl:py-5">
         What's an IP
