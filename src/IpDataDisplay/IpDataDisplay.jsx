@@ -1,6 +1,6 @@
 import CityInfo from "./CityInfo";
 import LanguageTimezoneDisplay from "./LanguageTimezoneDisplay";
-import IpLocationCoordinates from "./IpLocationCoordinates";
+import IpCountryLocation from "./IpCountryLocation";
 import CoordinatesDisplay from "./CoordinatesDisplay";
 import IpValueDisplay from "./IpValueDisplay";
 
@@ -15,6 +15,7 @@ export default function IpDataDisplay({ theme, ipData }) {
     "city",
     "postal",
   ];
+
   const dataValues = [];
   if ("data" in ipData) {
     dataKeys.forEach((key) => {
@@ -22,12 +23,26 @@ export default function IpDataDisplay({ theme, ipData }) {
     });
   }
 
+  const headersTextStyles = "text-xl sm:text-2xl md:text-3xl lg:text-4xl";
+
   const components = [
-    <IpValueDisplay dataValues={dataValues} />,
-    <CoordinatesDisplay dataValues={dataValues} />,
-    <IpLocationCoordinates dataValues={dataValues} />,
-    <CityInfo dataValues={dataValues} />,
-    <LanguageTimezoneDisplay ipData={ipData} />,
+    <IpValueDisplay
+      headersTextStyles={headersTextStyles}
+      dataValues={dataValues}
+    />,
+    <CoordinatesDisplay
+      headersTextStyles={headersTextStyles}
+      dataValues={dataValues}
+    />,
+    <IpCountryLocation
+      headersTextStyles={headersTextStyles}
+      dataValues={dataValues}
+    />,
+    <CityInfo headersTextStyles={headersTextStyles} dataValues={dataValues} />,
+    <LanguageTimezoneDisplay
+      headersTextStyles={headersTextStyles}
+      ipData={ipData}
+    />,
   ];
 
   const componentTree = components.map((component) => component);

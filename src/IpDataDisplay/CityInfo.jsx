@@ -1,4 +1,4 @@
-export default function CityInfo({ dataValues }) {
+export default function CityInfo({ headersTextStyles, dataValues }) {
   const cityInfo = [
     {
       name: "City, State",
@@ -12,7 +12,9 @@ export default function CityInfo({ dataValues }) {
   // TO-DO: fix the Tailwind classnames (pass the hardcoded parameters through the props for example)
   const cityInfoSection = cityInfo.map((data) => (
     <div className="w-1/2 flex flex-col cityInfo-section">
-      <span className="sm:text-2xl text-center font-bold text-blue-900">
+      <span
+        className={`${headersTextStyles} text-center font-bold text-blue-900`}
+      >
         {data.name}
       </span>
       <span className="text-center sm:text-xl md:text-2xl">{data.value}</span>
