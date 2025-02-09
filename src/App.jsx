@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-import IpLookup from "./IpLookup";
+import IpLookup from "./IpLookup/IpLookup";
 import IpDataDisplay from "./IpDataDisplay/IpDataDisplay";
 import Map from "./Map";
 import Header from "./Header/header";
