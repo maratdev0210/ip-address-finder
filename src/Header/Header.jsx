@@ -20,7 +20,7 @@ export default function Header({ theme, setTheme }) {
   // TO-DO: find a better way for writing styles using Tailwind
   return (
     <section
-      className={`${theme} ${isOpen ? "h-[100vh] top-0 left-0 bottom-0 right-0 w-full z-100 bg-white fixed" : "bg-blue-700/90"} dark:bg-black hover:cursor-pointer header sm:bg-blue-700/90 w-full sm:h-12 xl:h-16`}
+      className={`${theme} ${isOpen ? "h-[100vh] top-0 left-0 bottom-0 right-0 w-full z-100 bg-white fixed" : "bg-blue-700/90"} dark:bg-black hover:cursor-pointer header sm:bg-blue-700/100 w-full fixed z-100 sm:h-12 xl:h-16`}
     >
       <nav className={`justify-between ${isOpen ? "block" : "flex"}`}>
         <BurgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
