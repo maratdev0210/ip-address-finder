@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import IpLookup from "./IpLookup/IpLookup";
 import IpDataDisplay from "./IpDataDisplay/IpDataDisplay";
-import Map from "./Map";
+import Map from "./Map/Map";
 import Header from "./Header/header";
 import AboutIP from "./AboutIP/AboutIP";
 

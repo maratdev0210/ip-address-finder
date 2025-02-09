@@ -1,4 +1,4 @@
-// implementst the FAQ accordion-styled answers (aka revealing the answer when clicked on a question)
+// implements the FAQ accordion-styled answers (aka revealing the answer when clicked on a question)
 import { useState } from "react";
 import { FaQuestion } from "react-icons/fa";
 

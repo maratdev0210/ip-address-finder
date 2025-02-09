@@ -14,8 +14,8 @@ export default function Map({ ipLongitude, ipLatitude }) {
   const map = useRef(null);
 
   const markers = [
-    { lng: ipLongitude, lat: ipLatitude },
-    { lng: 0, lat: 0 },
+    { lng: ipLongitude, lat: ipLatitude },   
+    { lng: 0, lat: 0 },                // user's actual geolocation
   ];
 
   const zoom = 14;
