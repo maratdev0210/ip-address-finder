@@ -1,13 +1,21 @@
 import React from "react";
 
 export default function Navigation({ navigationLinks, isOpen, setIsOpen }) {
+  function handleLinkClick() {
+    // close the burger menu if it's open and if the screen size is less than 560px, otherwise do nothing
+    if (document.innerWidth <= 560) {
+      setIsOpen(!isOpen);
+    }
+    return;
+  }
+
   const navigationElements = Object.keys(navigationLinks).map((link) => {
     return (
       <li>
         <a
-          className="text-black dark:text-white text-2xl  xl:text-3xl hover:text-white/50 hover:underline"
+          className={`${isOpen ? "text-black" : "text-white"} text-2xl  xl:text-3xl hover:text-white/70 hover:underline`}
           href={link}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={handleLinkClick}
         >
           {navigationLinks[link]}
         </a>
