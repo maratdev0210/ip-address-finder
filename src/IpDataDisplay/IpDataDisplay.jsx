@@ -38,7 +38,7 @@ export default function IpDataDisplay({ theme, ipData }) {
     <>
       {"data" in ipData && (
         <div
-          className={`${theme} dark:bg-black/80 dark:border-0 rounded-xl dark:text-white/80 w-4/5 my-5 font-serif ip-data-container border-1 border-blue-900 border-solid mx-auto sm:w-1/2 md:w-2/3`}
+          className={`${theme} dark:bg-black/80 dark:border-0 rounded-xl dark:text-white/80 w-4/5 my-5 font-serif border-1 border-blue-900 border-solid mx-auto sm:w-1/2 md:w-2/3`}
         >
           {componentTree}
         </div>

@@ -1,22 +1,29 @@
+import { extractTimezone } from "./utilities/extractTimezone";
+
 export default function LanguageTimezoneDisplay({ ipData }) {
-  // TO-DO: fix the Tailwind classnames (pass the hardcoded parameters through the props for example)
+  const timeZone = extractTimezone({ ipData });
+
+  const languageTimezoneData = [
+    {
+      name: "Language",
+      value: ipData.data.languages[0].name,
+    },
+    {
+      name: "Time Zone",
+      value: ipData.data.time_zone.abbr.concat(" (" + timeZone + ")"),
+    },
+  ];
+
   return (
-    <div className="language-timezone flex px-3">
-      <div className={`language w-1/2 flex flex-col sm:py-2`}>
-        <span className={`text-header-size font-bold text-center`}>
-          Language
-        </span>
-        <span className="text-center">{ipData.data.languages[0].name}</span>
-      </div>
-      <div className="timezone w-1/2 flex flex-col sm:py-2">
-        <span className={`text-header-size text-center font-bold`}>
-          Time Zone
-        </span>
-        <span className="text-center">
-          {ipData.data.time_zone.abbr}
-          <span>({ipData.data.time_zone.offset.substring(0, 3)})</span>{" "}
-        </span>
-      </div>
+    <div className="flex px-3 text-center">
+      {languageTimezoneData.map((data) => {
+        return (
+          <div className="w-1/2 sm:py-2">
+            <p className="text-header-size font-bold">{data.name}</p>
+            <p>{data.value}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }
