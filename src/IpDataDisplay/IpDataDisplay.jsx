@@ -23,26 +23,12 @@ export default function IpDataDisplay({ theme, ipData }) {
     });
   }
 
-  const headersTextStyles = "text-xl sm:text-2xl md:text-3xl lg:text-4xl";
-
   const components = [
-    <IpValueDisplay
-      headersTextStyles={headersTextStyles}
-      dataValues={dataValues}
-    />,
-    <CoordinatesDisplay
-      headersTextStyles={headersTextStyles}
-      dataValues={dataValues}
-    />,
-    <IpCountryLocation
-      headersTextStyles={headersTextStyles}
-      dataValues={dataValues}
-    />,
-    <CityInfo headersTextStyles={headersTextStyles} dataValues={dataValues} />,
-    <LanguageTimezoneDisplay
-      headersTextStyles={headersTextStyles}
-      ipData={ipData}
-    />,
+    <IpValueDisplay dataValues={dataValues} />,
+    <CoordinatesDisplay dataValues={dataValues} />,
+    <IpCountryLocation dataValues={dataValues} />,
+    <CityInfo dataValues={dataValues} />,
+    <LanguageTimezoneDisplay ipData={ipData} />,
   ];
 
   const componentTree = components.map((component) => component);

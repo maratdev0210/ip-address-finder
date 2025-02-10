@@ -1,3 +1,8 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+.text-header-size {
+  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+}
+
